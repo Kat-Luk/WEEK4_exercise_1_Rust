@@ -14,7 +14,7 @@ fn main() {
             "read" => read_file(),
             "prank" => prank_user(),
             "end" => std::process::exit(0),
-            "help" => println!("$ Commands: read, prank, help, end.\n"),
+            "help" => println!("$ Commands: read, prank, help, end."),
             _ => println!("Invalid command. Try again.\n"),
         }
     }
