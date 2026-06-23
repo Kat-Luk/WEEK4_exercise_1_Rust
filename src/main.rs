@@ -29,5 +29,5 @@ fn read_file() {
 }
 
 fn prank_user() {
-    println!("$ You have recived an email.");
+    println!("$ You have received an email.");
 }
