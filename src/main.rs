@@ -12,15 +12,14 @@ fn main() {
             Ok(_) => {}
             Err(_) => break,
         }
-        thread::spawn(move || {
-            match user_input.trim() {
-                "read" => read_file(),
-                "prank" => prank_user(),
-                "end" => std::process::exit(0),
-                "help" => println!("$ Commands: read, prank, help, end."),
-                _ => println!("Invalid command. Try again."),
+
+        match user_input.trim() {
+            "read" => read_file(),
+            "prank" => prank_user(),
+            "end" => std::process::exit(0),
+            "help" => println!("$ Commands: read, prank, help, end."),
+            _ => println!("Invalid command. Try again."),
         }
-        });
     }
 }
 
