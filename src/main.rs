@@ -7,14 +7,18 @@ fn main() {
     loop {
         io::stdout().flush().unwrap();
         let mut user_input = String::new();
-        io::stdin().read_line(&mut user_input).expect("Failed to read input");
+        match io::stdin().read_line(&mut user_input) {
+            Ok(0) => break,
+            Ok(_) => {}
+            Err(_) => break,
+        }
         thread::spawn(move || {
             match user_input.trim() {
                 "read" => read_file(),
                 "prank" => prank_user(),
                 "end" => std::process::exit(0),
                 "help" => println!("$ Commands: read, prank, help, end."),
-                _ => println!("Invalid command. Try again.")
+                _ => println!("Invalid command. Try again."),
         }
         });
     }
