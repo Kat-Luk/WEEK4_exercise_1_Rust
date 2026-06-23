@@ -20,7 +20,11 @@ fn main() {
 }
 
 fn read_file() {
-    println!("$ eww");
+    match fs::read_to_string("read.txt") {
+        Ok(content) => print!("{}", content),
+        Err(_) => println!("$ eww"),
+    }
+
 }
 
 fn prank_user() {
