@@ -14,8 +14,8 @@ fn main() {
             "read" => read_file(),
             "prank" => prank_user(),
             "end" => std::process::exit(0),
-            "help" => println!("$ Commands: read, prank, help, end."),
-            _ => println!("Invalid command. Try again."),
+            "help" => println!("\n$ Commands: read, prank, help, end."),
+            _ => println!("\nInvalid command. Try again."),
         }
     }
 }
@@ -23,11 +23,11 @@ fn main() {
 fn read_file() {
     match fs::read_to_string("read.txt") {
         Ok(content) => print!("{}", content),
-        Err(_) => println!("$ eww"),
+        Err(_) => println!("\n$ eww"),
     }
 
 }
 
 fn prank_user() {
-    println!("$ You have received an email.");
+    println!("\n$ You have received an email.");
 }
