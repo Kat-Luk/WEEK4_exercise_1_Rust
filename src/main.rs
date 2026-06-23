@@ -4,7 +4,6 @@ use std::io::Write;
 use std::fs;
 
 fn main() {
-    println!("$ Commands: read, prank, help, end.");
     loop {
         io::stdout().flush().unwrap();
         let mut user_input = String::new();
@@ -14,6 +13,7 @@ fn main() {
                 "read" => read_file(),
                 "prank" => prank_user(),
                 "end" => std::process::exit(0),
+                "help" => println!("$ Commands: read, prank, help, end."),
                 _ => println!("Invalid command. Try again.")
         }
         });
