@@ -1,6 +1,7 @@
 use std::thread;
 use std::io;
 use std::io::Write;
+use std::fs;
 
 fn main() {
     println!("$ Commands: read, prank, help, end.");
