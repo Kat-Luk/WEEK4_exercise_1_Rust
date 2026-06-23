@@ -10,9 +10,9 @@ fn main() {
         io::stdin().read_line(&mut user_input).expect("Failed to read input");
         thread::spawn(move || {
             match user_input.trim() {
-                "$ read" => read_file(),
-                "$ prank" => prank_user(),
-                "$ end" => std::process::exit(0),
+                "read" => read_file(),
+                "prank" => prank_user(),
+                "end" => std::process::exit(0),
                 _ => println!("Invalid command. Try again.")
         }
         });
@@ -20,9 +20,9 @@ fn main() {
 }
 
 fn read_file() {
-    println!("eww");
+    println!("$ eww");
 }
 
 fn prank_user() {
-    println!("You have recived an email.");
+    println!("$ You have recived an email.");
 }
