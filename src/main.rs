@@ -11,6 +11,7 @@ fn main() {
             match user_input.trim() {
                 "read" => read_file(),
                 "prank" => prank_user(),
+                "end" => std::process::exit(0),
                 _ => println!("Invalid command. Try again.")
         }
         });
