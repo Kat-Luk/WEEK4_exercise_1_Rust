@@ -7,11 +7,8 @@ fn main() {
     loop {
         io::stdout().flush().unwrap();
         let mut user_input = String::new();
-        match io::stdin().read_line(&mut user_input) {
-            Ok(0) => break,
-            Ok(_) => {}
-            Err(_) => break,
-        }
+        io::stdin().read_line(&mut user_input).expect("Failed to read input");
+
 
         match user_input.trim() {
             "read" => read_file(),
